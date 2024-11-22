@@ -53,7 +53,40 @@
         .hamburger div {
             width: 30px;
             height: 5px;
-            background-color: black;
+            background-color: white;
+        }
+
+        #nav-menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        /* Responsive Styles for Navbar */
+        @media screen and (max-width: 768px) {
+            #nav-menu {
+                display: none;
+                flex-direction: column;
+                background-color: #2e7d32;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 0;
+            }
+
+            #nav-menu.active {
+                display: flex;
+            }
+
+            #nav-menu li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
         }
 
         #hero {
@@ -150,7 +183,7 @@
                 <div></div>
                 <div></div>
             </div>
-            <ul>
+            <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -195,8 +228,8 @@
 
     <script>
         function toggleMenu() {
-            const nav = document.querySelector('header nav');
-            nav.classList.toggle('active');
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
         }
     </script>
 </body>
