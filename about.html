@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Mason Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9; /* Light green background for home page */
+        }
+
+        header {
+            background-color: #2e7d32; /* Dark green */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 5px;
+            background-color: black;
+        }
+
+
+        /* Mobile view styles */
+        @media screen and (max-width: 768px) {
+            header nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            header nav ul li {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            header nav.active ul {
+                display: flex;
+            }
+        }
+
+        #about {
+            text-align: center;
+            padding: 50px 20px;
+            color: #333;
+            background-color: #e8f5e9; /* Light green background for consistency */
+        }
+
+        #about h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #about img {
+            margin-top: 30px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #1b5e20; /* Same dark green as navbar */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 0 15px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h1>About Me</h1>
+        <p>
+            Welcome to my portfolio! With over 20 years of experience, I specialize in crafting 
+            beautiful and durable home exteriors. My mission is to combine functionality with 
+            aesthetics, ensuring each project becomes a unique piece of art.
+        </p>
+        <p>
+            Whether it's designing a dream house exterior or providing full home interior solutions, 
+            I bring passion and expertise to every detail.
+        </p>
+        <img src="assets/p.webp" alt="Mason's Profile Picture">
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <p>&copy; 2024 [Mason's Name]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('header nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

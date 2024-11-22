@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Mason Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: black; /* Menu bar color set to black */
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Mobile Menu Styling */
+        header nav.active ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: black;
+            padding: 10px 0;
+        }
+
+        header nav.active ul li {
+            margin: 10px 0;
+        }
+
+        #services {
+            padding: 100px 20px 50px; /* Add padding to avoid overlapping with the fixed header */
+            background-color: #d4d4d4;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #services h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .service-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            justify-content: space-around;
+            width: 100%;
+            flex-wrap: wrap; /* Ensure the items wrap on smaller screens */
+            gap: 20px; /* Add spacing between items */
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex-shrink: 0;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 0.5s, transform 0.5s ease-in-out;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-top: 15px;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #777;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: black; /* Footer matches menu bar color */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            margin: 0 15px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            header nav ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .service-card {
+                width: 90%; /* On smaller screens, make the cards take up more space */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            #services h2 {
+                font-size: 28px; /* Adjust the heading size for smaller screens */
+            }
+
+            .service-card {
+                width: 100%; /* On small devices, the cards will take up full width */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <img src="assets/p.webp" alt="Service 1 Image">
+                <h3>Custom Masonry Designs</h3>
+                <p>We create unique and high-quality masonry designs tailored to your home or business.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/p.webp" alt="Service 2 Image">
+                <h3>Home Exterior Renovations</h3>
+                <p>Transform your home with beautiful exterior renovations that add value and charm.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/p.webp" alt="Service 3 Image">
+                <h3>Brick and Stone Installations</h3>
+                <p>Expert installation of brick and stone for patios, walkways, and more.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/p.webp" alt="Service 4 Image">
+                <h3>Patios and Walkways</h3>
+                <p>We build custom patios and walkways that enhance your outdoor living space.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <p>&copy; 2024 [Mason's Name]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('header nav');
+            nav.classList.toggle('active');
+        }
+
+        // Slide-in effect for service cards
+        document.addEventListener("DOMContentLoaded", () => {
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateX(0)';
+                }, index * 300); // Delay each card's animation for staggered effect
+            });
+        });
+
+        console.log("Services page loaded successfully!");
+    </script>
+</body>
+</html>

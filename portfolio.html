@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Mason Portfolio</title>
+    <style>
+        /* Apply box-sizing universally */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden; /* Prevents horizontal overflow */
+        }
+
+        header {
+            background-color: #2e7d32; /* Same dark green as home page */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative; /* For positioning the hamburger menu */
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* Hamburger Icon (Three-line menu) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 5px;
+            background-color: black; /* Set hamburger lines to black */
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #e8f5e9;
+        }
+
+        #portfolio h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .project {
+            display: inline-block;
+            width: 30%;
+            margin: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .project .content {
+            padding: 20px;
+        }
+
+        .project .content h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .project .content p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 0 15px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            .project {
+                width: 45%; /* Two columns for tablets */
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            header nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #2e7d32;
+                padding: 10px 0;
+            }
+
+            header nav ul li {
+                margin: 10px 0;
+            }
+
+            /* Show the navigation menu when toggle is clicked */
+            header nav.active ul {
+                display: flex;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .project {
+                width: 90%; /* One column for mobile */
+            }
+
+            #portfolio h1 {
+                font-size: 28px;
+            }
+
+            footer ul {
+                flex-direction: column;
+            }
+
+            footer ul li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="portfolio">
+        <h1>My Works</h1>
+
+        <div class="project">
+            <img src="assets\p.webp" alt="Project 1">
+            <div class="content">
+                <h2>House Exterior Design</h2>
+                <p>This is one of my most recent exterior designs. The project involved creating a modern and functional home design using premium masonry materials.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="assets\p.webp" alt="Project 2">
+            <div class="content">
+                <h2>Luxury Garden Walls</h2>
+                <p>Designed and constructed high-end stone garden walls that not only add elegance but also provide durability against weather elements.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="assets\p.webp" alt="Project 3">
+            <div class="content">
+                <h2>Custom Fireplace Construction</h2>
+                <p>Built a custom fireplace design that blends perfectly with the client's rustic home style. The structure uses reclaimed stone for an authentic look.</p>
+            </div>
+
+            
+        </div>
+
+        <div class="project">
+            <img src="assets\p.webp" alt="Project 3">
+            <div class="content">
+                <h2>Custom Fireplace Construction</h2>
+                <p>Built a custom fireplace design that blends perfectly with the client's rustic home style. The structure uses reclaimed stone for an authentic look.</p>
+            </div>
+
+            
+        </div>
+
+        <div class="project">
+            <img src="assets\p.webp" alt="Project 3">
+            <div class="content">
+                <h2>Custom Fireplace Construction</h2>
+                <p>Built a custom fireplace design that blends perfectly with the client's rustic home style. The structure uses reclaimed stone for an authentic look.</p>
+            </div>
+
+            
+        </div>
+
+        <div class="project">
+            <img src="assets\p.webp" alt="Project 3">
+            <div class="content">
+                <h2>Custom Fireplace Construction</h2>
+                <p>Built a custom fireplace design that blends perfectly with the client's rustic home style. The structure uses reclaimed stone for an authentic look.</p>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <p>&copy; 2024 [Mason's Name]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('header nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

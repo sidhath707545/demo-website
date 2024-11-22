@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Mason Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9; /* Light green background for home page */
+        }
+
+        header {
+            background-color: #2e7d32; /* Dark green */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 5px;
+            background-color: black;
+        }
+
+        #hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #1b5e20;
+            color: white;
+        }
+
+        #hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #hero a {
+            text-decoration: none;
+            background-color: white;
+            color: #1b5e20;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        #hero a:hover {
+            background-color: #2e7d32;
+            color: white;
+        }
+
+        /* Continuous Moving Gallery */
+        #gallery-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        #gallery {
+            display: flex;
+            animation: scroll-left 15s linear infinite;
+        }
+
+        #gallery img {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        /* Animation */
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 0 15px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Welcome to Mason's Portfolio</h1>
+        <p>Expert in House Exterior Design and Full House Interiors</p>
+        <a href="portfolio.html">View Portfolio</a>
+    </section>
+
+    <!-- Moving Image Gallery Section -->
+    <div id="gallery-container">
+        <div id="gallery">
+            <img src="assets/one.png" alt="Gallery Image 1">
+            <img src="assets/one.png" alt="Gallery Image 2">
+            <img src="assets/one.png" alt="Gallery Image 3">
+            <img src="assets/one.png" alt="Gallery Image 4">
+            <!-- Duplicate the images for seamless scrolling -->
+            <img src="assets/one.png" alt="Gallery Image 1">
+            <img src="assets/one.png" alt="Gallery Image 2">
+            <img src="assets/one.png" alt="Gallery Image 3">
+            <img src="assets/one.png" alt="Gallery Image 4">
+        </div>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <p>&copy; 2024 [Mason's Name]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('header nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
